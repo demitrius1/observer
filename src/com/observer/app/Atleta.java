@@ -1,4 +1,4 @@
-package com.observer.atleta;
+package com.observer.app;
 
 import com.observer.impl.Observador;
 import com.observer.impl.Publicador;
