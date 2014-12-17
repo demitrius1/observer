@@ -1,20 +1,18 @@
-package com.observer.app;
+package com.observer.monitor;
 
 import com.observer.impl.Observador;
+import com.observer.impl.PainelPrograma;
 import com.observer.impl.Publicador;
 import com.observer.programas.ProgramaTreinamento;
 import com.observer.programas.ProgramaNutricional;
 
-public class Atleta implements Observador {
+public class MonitoraPrograma implements Observador, PainelPrograma {
 
-	private int id;
-	private String Nome;
-	private int idade;
 	private Publicador programaAtleta;
 	private ProgramaTreinamento progTreino;
 	private ProgramaNutricional progNutri;
 
-	public Atleta(Publicador programaAtleta) {
+	public MonitoraPrograma(Publicador programaAtleta) {
 		this.programaAtleta = programaAtleta;
 		programaAtleta.incluirObservador(this);
 	}
@@ -24,25 +22,9 @@ public class Atleta implements Observador {
 		this.progNutri = progNutri;
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getNome() {
-		return Nome;
-	}
-	public void setNome(String nome) {
-		Nome = nome;
-	}
-	public int getIdade() {
-		return idade;
-	}
-	public void setIdade(int idade) {
-		this.idade = idade;
+	public void mostrar() {
+		System.out.println("Programa Treinamento: " + progTreino.getDescricao());
+		System.out.println("Programa Nutricional: " + progNutri.getDescricao());
 	}
 
 }

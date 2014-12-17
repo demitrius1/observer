@@ -6,6 +6,12 @@ public class ProgramaTreinamento {
 	private String data;
 	private String descricao;
 
+	public ProgramaTreinamento(int id, String data, String descricao) {
+		this.id = id;
+		this.data = data;
+		this.descricao = descricao;
+	}
+
 	public int getId() {
 		return id;
 	}
